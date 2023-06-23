@@ -1,0 +1,43 @@
+﻿<Window x:Class="ecommerce.Domain.View.InsertUpdateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ecommerce.Domain.View" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+        Title="InsertUpdateWindow" Height="450" Width="800" Background="AliceBlue">
+    <Grid>
+        <Canvas>
+            <Image Source="/Images/refresh image.png" Width="30" Canvas.Right="10" Canvas.Top="10"></Image>
+            <Button Command="{Binding RefreshButton}" Style="{StaticResource allButtons}" Width="30" Background="Transparent" Height="30" Canvas.Right="10" Canvas.Top="10" BorderThickness="0"></Button>
+        </Canvas>
+
+        <Canvas>
+            <ListView ItemsSource="{Binding ProductsItemSource}" SelectedItem="{Binding SelectedItemProduct}" DisplayMemberPath="Name" Canvas.Top="45" Canvas.Left="10" Width="783" Height="200">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding SelectionChanged}"></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </ListView>
+
+            <Button Command="{Binding InsertButton}" Canvas.Top="280" Canvas.Left="100" Width="200" Height="100" Content="Insert" FontSize="30">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+
+            <Button Command="{Binding UpdateButton}" Canvas.Top="280" Canvas.Right="100" Width="200" Height="100" Content="Update" FontSize="30">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>

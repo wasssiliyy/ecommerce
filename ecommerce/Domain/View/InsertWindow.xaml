@@ -1,0 +1,36 @@
+﻿<Window x:Class="ecommerce.Domain.View.InsertWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ecommerce.Domain.View"
+        mc:Ignorable="d"
+        Title="InsertWindow" Height="450" Width="800" Background="AliceBlue">
+    <Grid>
+        <Canvas>
+            <Label Canvas.Top="30" Canvas.Left="100" Content="Product name" FontSize="23"></Label>
+            <TextBox Text="{Binding ProductName}" FontSize="20" Width="400" Height="30" Canvas.Left="100" Canvas.Top="70" BorderThickness="3" BorderBrush="Black"></TextBox>
+
+            <Label Canvas.Top="130" Canvas.Left="100" Content="Product description" FontSize="23"></Label>
+            <TextBox Width="400" Text="{Binding ProductDescription}"  FontSize="20"  Height="30" Canvas.Left="100" Canvas.Top="170" BorderThickness="3" BorderBrush="Black"></TextBox>
+
+            <Label Canvas.Top="230" Canvas.Left="100" Content="Product price" FontSize="23"></Label>
+            <TextBox Width="400" Text="{Binding ProductPrice}"  FontSize="20"  Height="30" Canvas.Left="100" Canvas.Top="270" BorderThickness="3" BorderBrush="Black"></TextBox>
+
+            <Label Canvas.Top="330" Canvas.Left="100" Content="Product discount" FontSize="23"></Label>
+            <TextBox Width="400" Text="{Binding ProductDiscount}"  FontSize="20"  Height="30" Canvas.Left="100" Canvas.Top="370" BorderThickness="3" BorderBrush="Black"></TextBox>
+
+            <Label Canvas.Top="430" Canvas.Left="100" Content="Product quantity" FontSize="23"></Label>
+            <TextBox Width="400" Text="{Binding ProductQuantity}"  FontSize="20"  Height="30" Canvas.Left="100" Canvas.Top="470" BorderThickness="3" BorderBrush="Black"></TextBox>
+
+            <Button Command="{Binding InsertButton}" Canvas.Bottom="10" Canvas.Left="100" Width="400" Height="100" Content="Insert" FontSize="30">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Button.Resources>
+
+            </Button>
+        </Canvas>
+    </Grid>
+</Window>
